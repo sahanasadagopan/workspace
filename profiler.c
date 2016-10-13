@@ -60,11 +60,11 @@ int32_t dst;
 struct timeval my_atoi_start,my_atoi_end,my_itoa_start,my_itoa_end,my_ftoa_start,my_ftoa_end,atoi_start,atoi_end, itoa_start,itoa_end,ftoa_start,ftoa_end;
 long time,mtime, secs, usecs;
 int32_t base=10;
-gettimeofday(&my_itoa_start, NULL); // gets time in the start
-int8_t z=my_itoa(&src,dst,base); // executes function my_memove
-gettimeofday(&my_itoa_end, NULL);// gets time in the end
-secs  = my_itoa_end.tv_sec  - my_itoa_start.tv_sec;
-usecs = my_itoa_end.tv_usec - my_itoa_start.tv_usec;
+gettimeofday(&itoa_start, NULL); // gets time in the start
+int8_t z=itoa(&src,dst,base); // executes function my_memove
+gettimeofday(&itoa_end, NULL);// gets time in the end
+secs  = itoa_end.tv_sec  - itoa_start.tv_sec;
+usecs = itoa_end.tv_usec - itoa_start.tv_usec;
 time = ((secs*1000000)+usecs); // calculates time in us
 printf("Elapsed time for my_atoi for %d bytes: %ld usec\n", base,time);
 }

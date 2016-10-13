@@ -63,8 +63,8 @@ int32_t length=10;
 gettimeofday(&my_atoi_start, NULL); // gets time in the start
 my_atoi(src,length); // executes function my_memove
 gettimeofday(&my_atoi_end, NULL);// gets time in the end
-secs  = my_atoi_end.tv_sec  - my_memmove_start.tv_sec;
-usecs = my_atoi_end.tv_usec - my_memmove_start.tv_usec;
+secs  = my_atoi_end.tv_sec  - my_atoi_start.tv_sec;
+usecs = my_atoi_end.tv_usec - my_atoi_start.tv_usec;
 time = ((secs*1000000)+usecs); // calculates time in us
 printf("Elapsed time for my_atoi for %d bytes: %ld usec\n", length,time);
 }

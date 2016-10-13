@@ -37,7 +37,7 @@ int t;
 uint8_t src[5000], dst[5000];
 struct timeval my_memmove_start,my_memmove_end,memmove_start,memmove_end,my_memzero_start,my_memzero_end,memset_start,memset_end, my_reverse_start, my_reverse_end;
 long time,mtime, secs, usecs;
-int32_t length=1000;
+int32_t length=5000;
 gettimeofday(&my_memmove_start, NULL); // gets time in the start
 my_memmove(src,dst,length); // executes function my_memove
 gettimeofday(&my_memmove_end, NULL);// gets time in the end

@@ -8,21 +8,21 @@
 
 void del_item(circbuffer *cb)
 {
-	uint8_t buffcheck=buff_empty(cb);
+	/*uint8_t buffcheck=buff_empty(cb);
 	if(buffcheck)
 	{
 		char s[]="Buffer empty";
 		//Log0(s,strlen(s));
 	}
 	else
-	{
+	{*/
 		uint8_t item;
 		item=*cb->tail;
 		char s[]="\nDeleted item\n";
 		//Log0(s,strlen(s));
 		cb->tail++;
 		cb->num_elements--;
-	}
+	//}
 }
 void main(){
 	circbuffer cb,b;

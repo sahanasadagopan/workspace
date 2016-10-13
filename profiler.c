@@ -50,5 +50,5 @@ gettimeofday(&add_item_end, NULL);// gets time in the end
 secs  = add_item_end.tv_sec  - add_item_start.tv_sec;
 usecs = add_item_end.tv_usec - add_item_start.tv_usec;
 time = ((secs*1000000)+usecs); // calculates time in us
-printf("Elapsed time for my_ftoi for : %ld usec\n",time);
+printf("Elapsed time for add_item for : %ld usec\n",time);
 }

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
+#include <stdlib.h>
 #include "memory.h"
 #include "sys/time.h"
 int8_t my_itoa(int8_t *str,int32_t data,int32_t base)

@@ -8,14 +8,14 @@
 
 void add_item(circbuffer *cb,uint8_t item)
 {
-	uint8_t buffcheck=buff_full(cb);
-	if(buffcheck)
-	{
+	//uint8_t buffcheck=buff_full(cb);
+	//if(buffcheck)
+	/*{
 		char s[]="Buffer is full, wrap around is done";
 		//Log0(s,strlen(s));
 		cb->num_elements=0;
 		cb->head=cb->buffer;
-	}
+	}*/
 		*cb->head=item;
 		char s[]="Success";
 		//Log0(s,strlen(s));

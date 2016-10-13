@@ -32,7 +32,7 @@ struct timeval release_start,release_end,del_item_start,del_item_end,my_ftoa_sta
 long time,mtime, secs, usecs;
 int32_t base=10;
 gettimeofday(&release_start, NULL); // gets time in the start
-release(s); // executes function my_memove
+release(&s); // executes function my_memove
 gettimeofday(&release_end, NULL);// gets time in the end
 secs  = release_end.tv_sec  - release_start.tv_sec;
 usecs = release_end.tv_usec - release_start.tv_usec;

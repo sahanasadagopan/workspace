@@ -6,22 +6,23 @@
 #include "sys/time.h"
 #include "buffer.h"
 
-void add_item(circbuffer *cb,uint8_t item)
+void del_item(circbuffer *cb)
 {
-	//uint8_t buffcheck=buff_full(cb);
-	//if(buffcheck)
-	/*{
-		char s[]="Buffer is full, wrap around is done";
-		//Log0(s,strlen(s));
-		cb->num_elements=0;
-		cb->head=cb->buffer;
-	}*/
-		*cb->head=item;
-		char s[]="Success";
-		//Log0(s,strlen(s));
-		//printf("success");
-		cb->head++;
-		cb->num_elements++;
+	uint8_t buffcheck=buff_empty(cb);
+	if(buffcheck)
+	{
+		char s[]="Buffer empty";
+		Log0(s,strlen(s));
+	}
+	else
+	{
+		uint8_t item;
+		item=*cb->tail;
+		char s[]="\nDeleted item\n";
+		Log0(s,strlen(s));
+		cb->tail++;
+		cb->num_elements--;
+	}
 }
 void main(){
 	circbuffer cb,b;
@@ -41,14 +42,14 @@ int t;
 	int dr,cr;
 int8_t src;
 int32_t dst;
-struct timeval add_item_start,add_item_end,delete_item_start,delete_item_end,my_ftoa_start,my_ftoa_end,atoi_start,atoi_end, itoa_start,itoa_end,ftoa_start,ftoa_end;
+struct timeval add_item_start,add_item_end,del_item_start,del_item_end,my_ftoa_start,my_ftoa_end,atoi_start,atoi_end, itoa_start,itoa_end,ftoa_start,ftoa_end;
 long time,mtime, secs, usecs;
 int32_t base=10;
-gettimeofday(&add_item_start, NULL); // gets time in the start
-add_item(&cb,item); // executes function my_memove
-gettimeofday(&add_item_end, NULL);// gets time in the end
-secs  = add_item_end.tv_sec  - add_item_start.tv_sec;
-usecs = add_item_end.tv_usec - add_item_start.tv_usec;
+gettimeofday(&del_item_start, NULL); // gets time in the start
+del_item(&cb); // executes function my_memove
+gettimeofday(&del_item_end, NULL);// gets time in the end
+secs  = del_item_end.tv_sec  - del_item_start.tv_sec;
+usecs = del_item_end.tv_usec - del_item_start.tv_usec;
 time = ((secs*1000000)+usecs); // calculates time in us
-printf("Elapsed time for add_item for : %ld usec\n",time);
+printf("Elapsed time for del_item for : %ld usec\n",time);
 }

@@ -53,7 +53,6 @@ int8_t* my_itoa(int8_t *str,int32_t data,int32_t base)
 //Program to convert data from ASCII to Integer
 /*      variable definitions
         str:pointer to output converted data*/
-}
 void main(){
 int t;
 uint8_t src[5000], dst[5000];

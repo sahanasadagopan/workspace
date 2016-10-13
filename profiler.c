@@ -32,7 +32,7 @@ struct timeval my_atoi_start,my_atoi_end,my_itoa_start,my_itoa_end,my_ftoa_start
 long time,mtime, secs, usecs;
 int32_t base=10;
 gettimeofday(&atoi_start, NULL); // gets time in the start
-int8_t z=my_atoi(src); // executes function my_memove
+int32_t z=my_atoi(&src); // executes function my_memove
 gettimeofday(&atoi_end, NULL);// gets time in the end
 secs  = atoi_end.tv_sec  - atoi_start.tv_sec;
 usecs = atoi_end.tv_usec - atoi_start.tv_usec;

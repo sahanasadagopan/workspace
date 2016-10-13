@@ -55,8 +55,8 @@ int8_t* my_itoa(int8_t *str,int32_t data,int32_t base)
         str:pointer to output converted data*/
 void main(){
 int t;
-uint8_t src[5000], dst[5000];
-struct timeval my_atoi_start,my_atoi_end,itoa_start,itoa_end,ftoa_start,ftoa_end,memset_start,memset_end, my_reverse_start, my_reverse_end;
+int8_t src[5000], dst[5000];
+struct timeval my_atoi_start,my_atoi_end,my_itoa_start,my_itoa_end,my_ftoa_start,my_ftoa_end,atoi_start,atoi_end, itoa_start,itoa_end,ftoa_start,ftoa_end;
 long time,mtime, secs, usecs;
 int32_t length=10;
 gettimeofday(&my_itoa_start, NULL); // gets time in the start

@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "memory.h"
 #include "sys/time.h"
+#include "buffer.h"
 
 void add_item(circbuffer *cb,uint8_t item)
 {

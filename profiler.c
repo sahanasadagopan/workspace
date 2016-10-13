@@ -85,5 +85,5 @@ gettimeofday(&ftoa_end, NULL);// gets time in the end
 secs  = ftoa_end.tv_sec  - ftoa_start.tv_sec;
 usecs = ftoa_end.tv_usec - ftoa_start.tv_usec;
 time = ((secs*1000000)+usecs); // calculates time in us
-printf("Elapsed time for my_atoi for %d bytes: %ld usec\n", base,time);
+printf("Elapsed time for my_ftoi for %d bytes: %ld usec\n", base,time);
 }

@@ -40,14 +40,14 @@ int t;
 	int dr,cr;
 int8_t src;
 int32_t dst;
-struct timeval my_atoi_start,my_atoi_end,my_itoa_start,my_itoa_end,my_ftoa_start,my_ftoa_end,atoi_start,atoi_end, itoa_start,itoa_end,ftoa_start,ftoa_end;
+struct timeval add_item_start,add_item_end,delete_item_start,delete_item_end,my_ftoa_start,my_ftoa_end,atoi_start,atoi_end, itoa_start,itoa_end,ftoa_start,ftoa_end;
 long time,mtime, secs, usecs;
 int32_t base=10;
-gettimeofday(&ftoa_start, NULL); // gets time in the start
-int32_t z=my_ftoa(s,dr,cr); // executes function my_memove
-gettimeofday(&ftoa_end, NULL);// gets time in the end
-secs  = ftoa_end.tv_sec  - ftoa_start.tv_sec;
-usecs = ftoa_end.tv_usec - ftoa_start.tv_usec;
+gettimeofday(&add_item_start, NULL); // gets time in the start
+int32_t z=add_item(cb,item); // executes function my_memove
+gettimeofday(&add_item_end, NULL);// gets time in the end
+secs  = add_item_end.tv_sec  - add_item_start.tv_sec;
+usecs = add_item_end.tv_usec - add_item_start.tv_usec;
 time = ((secs*1000000)+usecs); // calculates time in us
-printf("Elapsed time for my_ftoi for %d bytes: %ld usec\n", base,time);
+printf("Elapsed time for my_ftoi for : %ld usec\n",time);
 }

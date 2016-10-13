@@ -45,7 +45,7 @@ struct timeval add_item_start,add_item_end,delete_item_start,delete_item_end,my_
 long time,mtime, secs, usecs;
 int32_t base=10;
 gettimeofday(&add_item_start, NULL); // gets time in the start
-int32_t z=add_item(&cb,item); // executes function my_memove
+add_item(&cb,item); // executes function my_memove
 gettimeofday(&add_item_end, NULL);// gets time in the end
 secs  = add_item_end.tv_sec  - add_item_start.tv_sec;
 usecs = add_item_end.tv_usec - add_item_start.tv_usec;
